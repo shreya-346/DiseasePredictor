@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Disease Predictor</title>
 </head>
 <body>
     
+
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Predictor</title>
+</head>
+<body
+  <h2>Enter Symptoms (1 = Yes, 0 = No)</h2>
+  <form action="/predict" method="post">
+    {% for symptom in symptoms %}
+      <label>{{ symptom.replace('_', ' ').title() }}:</label>
+      <input type="number" name="{{ symptom }}" min="0" max="1" required><br>
+    {% endfor %}
+    <button type="submit">Predict</button>
+  </form>
+</body>
 </body>
 </html>
